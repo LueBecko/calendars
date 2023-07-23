@@ -52,7 +52,7 @@ Length of a year was 354 days.
 
 Based on ancient etruscan calendar in which each day was reserved for an audience with the king.
 
-*Nundinae* was the market day. *Nundinum* or *internundinum* translates to nine-day-week. It describes a week of eight days length. Seven days plus the market day. The market day is the inclusive beginning and inclusive end of a nundial week marked as A.
+*Nundinae* was the market day. *Nundinum* or *internundinum* translates to nine-day-week. It describes a week of eight days length. Seven days plus the market day. The market day is the inclusive beginning and inclusive end of a nundinal week marked as A.
 
 Days were named with the nundinal letters A to H.
 
@@ -76,9 +76,9 @@ XXX
 
 ### Nundinal weeks
 
-Based on ancient etruscan calendar in which each day was reseverd for an audience with the king.
+Based on ancient etruscan calendar in which each day was reserved for an audience with the king.
 
-*Nundinae* was the market day. *Nundinum* or *internundinum* translates to nine-day-week. It describes a week of eight days length. Seven days plus the market day. The market day is the inclusive begining and inclusive end of a nundial week marked as A.
+*Nundinae* was the market day. *Nundinum* or *internundinum* translates to nine-day-week. It describes a week of eight days length. Seven days plus the market day. The market day is the inclusive beginning and inclusive end of a nundinal week marked as A.
 
 Days were named with the nundinal letters A to H.
 
