@@ -3,7 +3,6 @@ namespace CalendarTest;
 public record TenMonthCalendarDay(uint DayNumber) : ICalendarDay
 {
     private static readonly string[] monthNames = { "Martius", "Aprilis", "Maius", "Iunius", "Quintilis", "Sextilis", "September", "October", "November", "December", "-" };
-    private static readonly uint[] monthLength = { 31, 30, 31, 30, 31, 30, 30, 31, 30, 30, 50 };
     private static readonly uint[] accumulatedMonthLengths = { 0, 31, 61, 92, 122, 153, 183, 213, 244, 274, 304, 354 };
     private static readonly string[] weekdayNames = { "A", "B", "C", "D", "E", "F", "G", "H" };
 
