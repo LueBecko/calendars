@@ -132,11 +132,17 @@ First official law of Rome, that consolidated earlier legal practices. Based on 
 
 ### Years
 
-Till the year 507 b.c. (before christ) romans did not count years. Years were named after reigning consuls.
+Till the year 507 b.c. (before christ) romans did not count or name years. 
 
-After the founding of the Jupiter temple the years were occasionally counted based on the founding date of Rome. 753 b.c. Rome is founded. This equates to the year 1 a.u.c. (Ab urbe condita) [https://en.wikipedia.org/wiki/Ab_urbe_condita]. In this exercise we stick to that notation.
+After 507 b.c. (the founding of the Jupiter temple and the Roman republic) years were named after the current reigning consul. A consul was appointed for one year. Due to politics it might have happened that a year had several consuls (suffectus - substitute). A complete list of names can be found in [https://en.wikipedia.org/wiki/List_of_Roman_consuls].
 
-Most notably Diocletian introduced a numbering of years that was used for some time. It was counting the years after Diocletians inauguration with the notation 1 a.d.
+*Option A:* To be complete we use all recorded names.
+
+*Option B:* For simplicity we omit the naming of years.
+
+*Option C:* Later in the Renaissance the practice to count years based on the founding date of Rome. 753 b.c. Rome became popular. The year 753 b.c. equates to the year 1 a.u.c. (*Ab urbe condita*) [https://en.wikipedia.org/wiki/Ab_urbe_condita].
+
+*Side note:* In 297 a.d. Diocletian introduced a numbering of years that was used for some time, especially in roman egypt. It was counting the years after Diocletians inauguration with the notation 1 a.d. Later in 525 a.d. the notation of *a.d.* was overwritten with the current meaning (*anno domini*).
 
 ### Months
 
