@@ -26,7 +26,7 @@ The you introduce the ten month calendar. For the sake of this exercise we ignor
 >
 > In an attempt to make scheduling comparable the Roman king tasked us with delivering a reference implementation of the calendar that most agree upon. It is based on the old etruscan practices of government.
 
-## Roman republic calendar
+### Roman republic calendar
 
 > _400 b.c._
 >
@@ -36,7 +36,7 @@ The you introduce the ten month calendar. For the sake of this exercise we ignor
 
 Rome is now a republic with actual laws and legal procedures. The *decemviri' (ten old wise dudes) are the legislative body of the republic. They designed the republic calendar that was used since ~450 b.c.
 
-## Roman republic calendar - Update
+### Roman republic calendar - Update
 
 > _153 b.c._
 >
@@ -134,7 +134,9 @@ First official law of Rome, that consolidated earlier legal practices. Based on 
 
 Till the year 507 b.c. (before christ) romans did not count years. Years were named after reigning consuls.
 
-After the founding of the Jupiter temple the years were counted based on the founding date of Rome. 753 b.c. Rome is founded. This equates to the year 1 a.u.c. (Ab urbe condita) [https://en.wikipedia.org/wiki/Ab_urbe_condita]
+After the founding of the Jupiter temple the years were occasionally counted based on the founding date of Rome. 753 b.c. Rome is founded. This equates to the year 1 a.u.c. (Ab urbe condita) [https://en.wikipedia.org/wiki/Ab_urbe_condita]. In this exercise we stick to that notation.
+
+Most notably Diocletian introduced a numbering of years that was used for some time. It was counting the years after Diocletians inauguration with the notation 1 a.d.
 
 ### Months
 
@@ -190,6 +192,195 @@ This four year cycle is four days longer than the actual cycle (mean year durati
 | 24 | common | 355 |
 
 The mean year duration over a 24 year cycle is 365,25 days.
+
+Month were initially used ina an adjective way - *I. Sexitilis* means something like the sixth *Kalendis* in the current year.
+
+### Days within a month
+
+Days within a month are structured as references to special days.
+
+In earlier lunar based calendars the days *kalendis*, *nonis*, and *ides* were derived from the state of the moon (*kalendis* - crescent moon, *nonis* -  quarter moon, *ides* - full moon). These names were carried over into the newer calendars where they got new meanings.
+
+The first day of a month is always called *kalendis* - it is the day where roman civilians had to pay their debts. It is also the origin of the name *calendar* - in ancient rome calendars where published on *fasti* and named in that way.
+
+Also these special days where deeply engraved into the religious traditions of the romans. The *kalendis* was sacred to Juno, the *ides* was sacred to Jupiter.
+
+All other days were named relative to these special days.
+
+Names of a 31 day long month (Martius, Maius, Quintilis, October)
+
+| **Day #** | **Name** | **Abbreviation** |
+|-----------|----------|------------------|
+|  1 | Kalendis | Kal. |
+|  2 | **ante diem sextum nonas** | **a.d. VI Non.** |
+|  3 | ante diem quintum nonas | a.d. V Non. |
+|  4 | ante diem quartum nonas | a.d. IV Non. |
+|  5 | ante diem tertium nonas | a.d. III Non. |
+|  6 | Pridie Nonas | Prid. Non. |
+|  7 | Nonis | Non. |
+|  8 | ante diem octavum Idus | a.d. VIII Eid. |
+|  9 | ante diem septimum Idus | a.d. VII Eid. |
+| 10 | ante diem sextum Idus | a.d. VI Eid. |
+| 11 | ante diem quintum Idus | a.d. V Eid. |
+| 12 | ante diem quartum Idus | a.d. IV Eid. |
+| 13 | ante diem tertium Idus | a.d. III Eid. |
+| 14 | Pridie Idus | Prid. Eid. |
+| 15 | Idus | Eid. |
+| 16 | **ante diem septimum decimum Kalendas** | **a.d. XVII Kal.** |
+| 17 | ante diem sextum decimum Kalendas | a.d. XVI Kal. |
+| 18 | ante diem quintum decimum Kalendas | a.d. XV Kal. |
+| 19 | ante diem quartum decimum Kalendas | a.d. XIV Kal. |
+| 20 | ante diem tertium decimum Kalendas | a.d. XIII Kal. |
+| 21 | ante diem dudecimum Kalendas | a.d. XVII Kal. |
+| 22 | ante diem unodecimum Kalendas | a.d. XVI Kal. |
+| 23 | ante diem decimum Kalendas | a.d. X Kal. |
+| 24 | ante diem nonum Kalendas | a.d. IX Kal. |
+| 25 | ante diem octavium Kalendas | a.d. VIII Kal. |
+| 25 | ante diem septimum Kalendas | a.d. VII Kal. |
+| 27 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 28 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 29 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 30 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 31 | Pridei Kalendas | Prid. Kal.|
+
+Names of a 29 day long month (Aprilis, Iunius, Quintilis, September, November, December, Ianuarius).
+
+| **Day #** | **Name** | **Abbreviation** |
+|-----------|----------|------------------|
+|  1 | Kalendis | Kal. |
+|  2 | **ante diem quartum nonas** | **a.d. IV Non.** |
+|  3 | ante diem tertium nonas | a.d. III Non. |
+|  4 | Pridie Nonas | Prid. Non. |
+|  5 | Nonis | Non. |
+|  6 | ante diem octavum Idus | a.d. VIII Eid. |
+|  7 | ante diem septimum Idus | a.d. VII Eid. |
+|  8 | ante diem sextum Idus | a.d. VI Eid. |
+|  9 | ante diem quintum Idus | a.d. V Eid. |
+| 10 | ante diem quartum Idus | a.d. IV Eid. |
+| 11 | ante diem tertium Idus | a.d. III Eid. |
+| 12 | Pridie Idus | Prid. Eid. |
+| 13 | Idus | Eid. |
+| 14 | **ante diem septimum decimum Kalendas** | **a.d. XVII Kal.** |
+| 15 | ante diem sextum decimum Kalendas | a.d. XVI Kal. |
+| 16 | ante diem quintum decimum Kalendas | a.d. XV Kal. |
+| 17 | ante diem quartum decimum Kalendas | a.d. XIV Kal. |
+| 18 | ante diem tertium decimum Kalendas | a.d. XIII Kal. |
+| 19 | ante diem dudecimum Kalendas | a.d. XVII Kal. |
+| 20 | ante diem unodecimum Kalendas | a.d. XVI Kal. |
+| 21 | ante diem decimum Kalendas | a.d. X Kal. |
+| 22 | ante diem nonum Kalendas | a.d. IX Kal. |
+| 23 | ante diem octavium Kalendas | a.d. VIII Kal. |
+| 24 | ante diem septimum Kalendas | a.d. VII Kal. |
+| 25 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 26 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 27 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 28 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 29 | Pridei Kalendas | Prid. Kal.|
+
+Names of a 28 day long month (Februarius).
+
+| **Day #** | **Name** | **Abbreviation** |
+|-----------|----------|------------------|
+|  1 | Kalendis | Kal. |
+|  2 | **ante diem quartum nonas** | **a.d. IV Non.** |
+|  3 | ante diem tertium nonas | a.d. III Non. |
+|  4 | Pridie Nonas | Prid. Non. |
+|  5 | Nonis | Non. |
+|  6 | ante diem octavum Idus | a.d. VIII Eid. |
+|  7 | ante diem septimum Idus | a.d. VII Eid. |
+|  8 | ante diem sextum Idus | a.d. VI Eid. |
+|  9 | ante diem quintum Idus | a.d. V Eid. |
+| 10 | ante diem quartum Idus | a.d. IV Eid. |
+| 11 | ante diem tertium Idus | a.d. III Eid. |
+| 12 | Pridie Idus | Prid. Eid. |
+| 13 | Idus | Eid. |
+| 14 | **ante diem sextum decimum Kalendas** | **a.d. XVI Kal.** |
+| 15 | ante diem quintum decimum Kalendas | a.d. XV Kal. |
+| 16 | ante diem quartum decimum Kalendas | a.d. XIV Kal. |
+| 17 | ante diem tertium decimum Kalendas | a.d. XIII Kal. |
+| 18 | ante diem dudecimum Kalendas | a.d. XVII Kal. |
+| 19 | ante diem unodecimum Kalendas | a.d. XVI Kal. |
+| 20 | ante diem decimum Kalendas | a.d. X Kal. |
+| 21 | ante diem nonum Kalendas | a.d. IX Kal. |
+| 22 | ante diem octavium Kalendas | a.d. VIII Kal. |
+| 23 | ante diem septimum Kalendas | a.d. VII Kal. |
+| 24 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 25 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 26 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 27 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 28 | Pridei Kalendas | Prid. Kal.|
+
+The references are always looking forward. So the last day of *Maius* is called *Pridei Kalendas Iunius* - the day before *ante diem tertium Kalendas Iunius*.
+
+### Intercalation - structure and names of leap months
+
+The last month *Februarius* was the month that could be addended by a leap month. However it is not that simple...
+
+In a leap year the days progress normally until *a.d. VII Kal. Mart.* - the *Terminalia*, the end of the religious year. Then the *mensis intercaliary* started. The five remaining days of *Februarius* were added afterwards. The first day of the remaining five days (*a.d. VI Kal. Mart.*) was called *Regifugium*.
+
+Names of *Februarius* with *mensis intercaliar*.
+
+| **Day #** | **Name** | **Abbreviation** |
+|-----------|----------|------------------|
+|  1 | Kalendis | Kal. |
+|  2 | ante diem quartum nonas | a.d. IV Non. |
+|  3 | ante diem tertium nonas | a.d. III Non. |
+|  4 | Pridie Nonas | Prid. Non. |
+|  5 | Nonis | Non. |
+|  6 | ante diem octavum Idus | a.d. VIII Eid. |
+|  7 | ante diem septimum Idus | a.d. VII Eid. |
+|  8 | ante diem sextum Idus | a.d. VI Eid. |
+|  9 | ante diem quintum Idus | a.d. V Eid. |
+| 10 | ante diem quartum Idus | a.d. IV Eid. |
+| 11 | ante diem tertium Idus | a.d. III Eid. |
+| 12 | Pridie Idus | Prid. Eid. |
+| 13 | Idus | Eid. |
+| 14 | ante diem unodecimum Kalendas | a.d. XVI Kal. |
+| 15 | ante diem decimum Kalendas | a.d. X Kal. |
+| 16 | ante diem nonum Kalendas | a.d. IX Kal. |
+| 17 | ante diem octavium Kalendas | a.d. VIII Kal. |
+| 18 | ante diem septimum Kalendas | a.d. VII Kal. |
+| 19 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 20 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 21 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 22 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 23 | Pridei Kalendas | Prid. Kal.|
+| | **Start of mensis intercaliari** | |
+|  1 | Kalendis | Kal. |
+|  2 | ante diem quartum nonas | a.d. IV Non. |
+|  3 | ante diem tertium nonas | a.d. III Non. |
+|  4 | Pridie Nonas | Prid. Non. |
+|  5 | Nonis | Non. |
+|  6 | ante diem octavum Idus | a.d. VIII Eid. |
+|  7 | ante diem septimum Idus | a.d. VII Eid. |
+|  8 | ante diem sextum Idus | a.d. VI Eid. |
+|  9 | ante diem quintum Idus | a.d. V Eid. |
+| 10 | ante diem quartum Idus | a.d. IV Eid. |
+| 11 | ante diem tertium Idus | a.d. III Eid. |
+| 12 | Pridie Idus | Prid. Eid. |
+| 13 | Idus | Eid. |
+| 15 | ante diem quintum decimum Kalendas | a.d. XV Kal. |
+| 16 | ante diem quartum decimum Kalendas | a.d. XIV Kal. |
+| 17 | ante diem tertium decimum Kalendas | a.d. XIII Kal. |
+| 18 | ante diem dudecimum Kalendas | a.d. XVII Kal. |
+| 19 | ante diem unodecimum Kalendas | a.d. XVI Kal. |
+| 20 | ante diem decimum Kalendas | a.d. X Kal. |
+| 21 | ante diem nonum Kalendas | a.d. IX Kal. |
+| 22 | ante diem octavium Kalendas | a.d. VIII Kal. |
+| 23 | ante diem septimum Kalendas | a.d. VII Kal. |
+| 24 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 25 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 26 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 27 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 28 | Pridei Kalendas | Prid. Kal.|
+| | **End of mensis intercaliari** | |
+| 24 | ante diem sextum Kalendas | a.d. VI Kal. |
+| 25 | ante diem quimtum Kalendas | a.d. V Kal. |
+| 26 | ante diem quartum Kalendas | a.d. IV Kal. |
+| 27 | ante diem tertium Kalendas | a.d. IX Kal. |
+| 28 | Pridei Kalendas | Prid. Kal.|
+
+The above names apply to a leap month of 28 day length. By now you should be able to derive the naming schema for a 27 day length leap month.
 
 ### Nundinal weeks
 
