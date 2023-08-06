@@ -18,6 +18,8 @@ public record TenMonthCalendarDay(uint DayNumber) : ICalendarDay
     public string MonthName => monthNames[Month - 1];
     public string WeekdayName => weekdayNames[Weekday];
 
+    public uint DayInYear => throw new NotImplementedException();
+
     public ICalendarDay AddDays(uint days) => new TenMonthCalendarDay(DayNumber + days);
     public ICalendarDay SubtractDays(uint days) => new TenMonthCalendarDay(DayNumber - days);
 }

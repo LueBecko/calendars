@@ -4,6 +4,7 @@ public interface ICalendarDay
 {
     uint DayNumber { get; }
     uint Year { get; }
+    uint DayInYear { get; }
     uint Month { get; }
     uint DayInMonth { get; }
     uint WeekInYear { get; }

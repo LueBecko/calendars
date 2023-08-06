@@ -9,7 +9,9 @@ public class RepublicCalendar : ICalendarDay
 
     public uint DayNumber { get; }
 
-    public uint Year => DayNumber switch
+    private uint DayIn24YearCycle => ((DayNumber - 1) % 8766) + 1;
+
+    private uint YearIn24YearCycle => DayIn24YearCycle switch
     {
         > 8411 => 24u,
         > 8056 => 23u,
@@ -37,7 +39,86 @@ public class RepublicCalendar : ICalendarDay
         _ => 1u
     };
 
-    public uint Month => throw new NotImplementedException();
+    private RepublicYearType YearType => YearIn24YearCycle switch
+    {
+        2 => RepublicYearType.LeapYear,
+        4 => RepublicYearType.LongLeapYear,
+        6 => RepublicYearType.LeapYear,
+        8 => RepublicYearType.LongLeapYear,
+        10 => RepublicYearType.LeapYear,
+        12 => RepublicYearType.LongLeapYear,
+        14 => RepublicYearType.LeapYear,
+        16 => RepublicYearType.LongLeapYear,
+        18 => RepublicYearType.LeapYear,
+        20 => RepublicYearType.LeapYear,
+        22 => RepublicYearType.LeapYear,
+        _ => RepublicYearType.NormalYear
+    };
+
+    public uint Year => 24 * ((DayNumber - 1) / 8766) + YearIn24YearCycle;
+
+    public uint DayInYear => DayIn24YearCycle switch
+    {
+        > 8411 => DayIn24YearCycle - 8411,
+        > 8056 => DayIn24YearCycle - 8056,
+        > 7679 => DayIn24YearCycle - 7679,
+        > 7324 => DayIn24YearCycle - 7324,
+        > 6947 => DayIn24YearCycle - 6947,
+        > 6592 => DayIn24YearCycle - 6592,
+        > 6215 => DayIn24YearCycle - 6215,
+        > 5860 => DayIn24YearCycle - 5860,
+        > 5482 => DayIn24YearCycle - 5482,
+        > 5127 => DayIn24YearCycle - 5127,
+        > 4750 => DayIn24YearCycle - 4750,
+        > 4395 => DayIn24YearCycle - 4395,
+        > 4017 => DayIn24YearCycle - 4017,
+        > 3662 => DayIn24YearCycle - 3662,
+        > 3285 => DayIn24YearCycle - 3285,
+        > 2930 => DayIn24YearCycle - 2930,
+        > 2552 => DayIn24YearCycle - 2552,
+        > 2197 => DayIn24YearCycle - 2197,
+        > 1820 => DayIn24YearCycle - 1820,
+        > 1465 => DayIn24YearCycle - 1465,
+        > 1087 => DayIn24YearCycle - 1087,
+        > 732 => DayIn24YearCycle - 732,
+        > 355 => DayIn24YearCycle - 355,
+        _ => DayIn24YearCycle
+    };
+
+    public uint Month => YearType switch
+    {
+        RepublicYearType.NormalYear => DayInYear switch
+            {
+                > 327 => 12,
+                > 298 => 11,
+                > 269 => 10,
+                > 240 => 9,
+                > 209 => 8,
+                > 180 => 7,
+                > 151 => 6,
+                > 120 => 5,
+                > 91 => 4,
+                > 60 => 3,
+                > 31 => 2,
+                _ => 1
+            },
+        _ => DayInYear switch
+            {
+                > 350 => 13,
+                > 327 => 12,
+                > 298 => 11,
+                > 269 => 10,
+                > 240 => 9,
+                > 209 => 8,
+                > 180 => 7,
+                > 151 => 6,
+                > 120 => 5,
+                > 91 => 4,
+                > 60 => 3,
+                > 31 => 2,
+                _ => 1
+            }
+    };
 
     public uint DayInMonth => throw new NotImplementedException();
 
@@ -59,5 +140,12 @@ public class RepublicCalendar : ICalendarDay
     public ICalendarDay SubtractDays(uint days)
     {
         throw new NotImplementedException();
+    }
+
+    private enum RepublicYearType
+    {
+        NormalYear,
+        LeapYear,
+        LongLeapYear
     }
 }
