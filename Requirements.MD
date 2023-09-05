@@ -1,154 +1,36 @@
 # Calendar Requirements
 
-## Story
+## Introduction
 
 This exercise is embedded into a small story that covers the whole development from ancient calendars to modern calendars. Story parts are used to introduce the next task. However they are not necessary to facilitate the Kata, but i like them. The story parts are written from the perspective of an imaginary historical product owner (PO).
 
 Story parts are marked by block quotes.
 
-> _600 b.c._
+> _304 b.c._
 > 
 > We are a small startup located at the baltic sea. We are part of an slavic tribe, which is strongly connected to other tribes through trade networks. 
 > 
-> Live is harsh, but on the bright side: I just landed us a lucrative deal with a small kingdom on the other side of the alps. It is a town state called Rome. They are currently growing and increasing in prosperity due to trade and crafts. However for some reasons they lack qualified personal in the craft of software engineering. This is the niche we can fill. If we can deliver a valuable solution we might attract followup development contracts. So success here is critical for strategic reasons.
+> Live is harsh, but on the bright side: I just landed us a lucrative deal with a small kingdom on the other side of the alps. It is a republic called Rome. They are currently growing and increasing in prosperity due to trade and crafts. However for some reasons they lack qualified personal in the craft of software engineering. This is the niche we can fill. If we can deliver a valuable solution we might attract followup development contracts. So success here is critical for strategic reasons.
 
-### The legendary ten month calendar
+## Flavian reform
 
-To facilitate this exercise it is useful to start with the basics of roman counting. As moderator and PO you introduce your team to the unfamiliar mindset of your customers.
-
-_Option:_ This allows to start the whole experience with the classical Roman Numeral kata. A nice warmup. But it could also be omitted - use arabic numbers in this case.
-
-The you introduce the ten month calendar. For the sake of this exercise we ignore the historical research that indicates that the ten month calendar was most likely a myth.
-
-> _600 b.c._
->
-> Rome is burdened by the lack of clear calendar usage. Even though if one looks further to Greece, Egypt or even ancient Babylon, most long-lived and successful empires had well defined calendars - some lunar based, some solar based. These are necessary for documentation, scheduling religious practices, govern a city, form contracts and maintain trade. Rome on the other hand has a multitude of calendars practices.
->
-> In an attempt to make scheduling comparable the Roman king tasked us with delivering a reference implementation of the calendar that most agree upon. It is based on the old etruscan practices of government.
-
-### Roman republic calendar
-
-> _400 b.c._
->
-> Our little startup did manage to stay liquid and after many financing rounds we settled for a more sustainable model of financing. We are a small private owned company with a very small circle of frequent customers and services.
->
-> However one of our old customers just send me a message in which they require our services again. We are talking of the city of Rome. Last time we worked for them they were just one of many small kingdoms in the known world. But nowadays they are a republic - with laws and consuls and all that fancy new government concepts. There wealth and sphere of influence has grown rapidly. If we can bind them to our services this partnership might become something very valuable and long-lasting. So for our company it is from utmost strategic importance to make this customer happy.
-
-Rome is now a republic with actual laws and legal procedures. The *decemviri' (ten old wise dudes) are the legislative body of the republic. They designed the republic calendar that was used since ~450 b.c.
-
-### Roman republic calendar - Update
-
-> _153 b.c._
->
-> Good news everybody. I got some news from our old customer Rome. They are doing well and our calendar implementation is used by the priesthood. They are now at a point where the calendar is regularly published before the next month starts. So planing based on dates becomes quite reasonably. However they requested a little change from us due to updates in their government practice.
-
-This little change could be easily incorporated into the existing calendar implementation if it is well done.
-
-## Requirements
-
-### Basics
-
-In short: *"Die spinnen, die Römer!"*
-
-See [https://en.wikipedia.org/wiki/Roman_numerals] for details.
-
-* Romans start counting with 1 - NOT zero!
-* Romans do not recognize the existence of negative numbers!
-* Roman numbers only cover a range from 1 (**I**) to 3999 (**MMMCMXCIX**)! Later extensions of the notation allowed for larger numbers and fractions, which were not universally adopted. Our scope is bound to the basic notation.
-
-### Days
-
-A day is a day, easily observable by the rise of the sun. A day is alaays preceded and followed be another day. The day is the basic unit that is tracked in calendars.
-
-### Week
-
-A week is a constant length repeated time frame that spans several days. A week is not based on any natural observable phenomena, but on any common, religious, legal or trade traditions.
-
-### Month
-
-A year is an observable unit of time that is defined by the fullness of the moon. A lunar month is roughly 29,5 days long. In calendars the duration of the month does often diverge from the lunar cycle length.
-
-### Years
-
-A year is an observable unit of time that is defined by the position of the sun. A year contains roughly 12,5 moon cycles.
-
-### What is a calendar?
-
-The task of a calendar is to define structures that help to identify days and make them comparable - did day A happen before or after day B?
-
-A calendar is a form of a total ordering over the set of all days. Note that not all calendars fullfil this properties, some form only a partial ordering. I't depends on the usage. If a calendar is to be used to track certain yearly events (e.g. to predict the summer solstice) the ordering only needs to be total within the year, but not among years. When the calendar is used for historical, law or business records a total ordering among all days is more likely to be required.
-
-## Early roman calendars
-
-In the beginning - after the founding of the city - for several centuries there was not one roman calendar. It was a number of various local calendars, some lunar based, some solar based. Origin were outdated etruscan calendars.
-
-## The legendary ten months calendar
-
-The ten month calendar is a calendar that later romans claimed were used by the early romans. There is lack of evidence and it seems like a post-hoc construction rather than a clear historical fact. (For this exercise we assume that the legendary ten month calendar was the indeed the first standardized all roman calendar)
-
-### Years
-
-Romans did not count years (before the year 507 b.c.). Years were named after reigning consuls. At the beginning of the year - *Martius I* - the new consul entered office and came into power.
-
-Since we don't know the name of the reigning consuls we assume in this exercise that no naming of years was done. A date in this calendar is therefore not unique and lacks the total ordering property. However it is feasible to navigate within a year.
-
-### Months
-
-The calendar did start at March (think about it: September is based on septime, October based on octo, November on novo, December on dece). There was an early misunderstanding, that the year did start in March but did also end in December. Rather romans did have another month between December and March which was not named and was fifty days long. This represents the fact that winter time was a time of less meetings and less urgency.
-
-Month names and length:
-
-| **Name** | **Length** |
-|----------|-----------|
-| Martius | 31 |
-| Aprilis | 30 |
-| Maius | 31 |
-| Iunius | 30 |
-| Quintilis | 31 |
-| Sextilis | 30 |
-| September | 30 |
-| October | 31 |
-| November | 30 |
-| December | 30 |
-| - | 50 |
-
-Length of a year was 354 days.
-
-### Nundinal weeks
-
-The nunidinal week is based on ancient etruscan calendar in which each day was reserved for an audience with the king.
-
-*Nundinae* was the market day. *Nundinum* or *internundinum* translates to nine-day-week. It describes a week of eight days length (*"Die spinnen, die Römer!"*). Seven days plus the market day. The market day is the inclusive beginning and inclusive end of a nundinal week marked as **A**.
-
-Days were named with the nundinal letters A to H.
-
-A B C D E F G H **A B C D E F G H A** B C D E F G H
-
-## Roman Republic calendar
-
-The laws of the twelve tables (449 BC) [https://en.wikipedia.org/wiki/Twelve_Tables]. Is based on a greek calendar.
+Since 509 b.c. Rome is a republic. The laws of the twelve tables (449 BC) [https://en.wikipedia.org/wiki/Twelve_Tables] established a calendar.
 
 First official law of Rome, that consolidated earlier legal practices. Based on these laws there was a board of ten men named *Decemviri legibus scribundis* [https://en.wikipedia.org/wiki/Decemviri_legibus_scribundis] that had among many other tasks to fix the calendar. They introduced the Roman Republic calendar.
 
-### Years
+The Decembviri decided on a calendar format that replaces the old etruscan based unreliable calendars. This calendar is based on greek calendars and and will be the starting point of our journey.
 
-Till the year 507 b.c. (before christ) romans did not count or name years. 
+In 305 b.c. Gnaeus Flavius, a secretary (scriba) to censor App. Claudius Caecus, introduced a series of reforms. Key goal is to take away power over the calendar from the clerus, by making the calendar public and reliable. As part of this endeavour we have to implement this calendar.
 
-After 507 b.c. (the founding of the Jupiter temple and the Roman republic) years were named after the current reigning consul. A consul was appointed for one year. Due to politics it might have happened that a year had several consuls (suffectus - substitute). A complete list of names can be found in [https://en.wikipedia.org/wiki/List_of_Roman_consuls].
+### Specification
 
-*Option A:* To be complete we use all recorded names.
+**Days:** A day is a day, easily observable by the rise of the sun. A day is always preceded and followed be another day. The day is the basic unit that is tracked in calendars.
 
-*Option B:* For simplicity we omit the naming of years.
+A calendar is a total ordering of days. Each day has a unique name (called a date) and by this name it is easy to determine its place in the whole set of all days.
 
-*Option C:* Later in the Renaissance the practice to count years based on the founding date of Rome. 753 b.c. Rome became popular. The year 753 b.c. equates to the year 1 a.u.c. (*Ab urbe condita*) [https://en.wikipedia.org/wiki/Ab_urbe_condita].
+**Years:** We use the a.u.c. (ad urbe conditam) year numbering, even though this was a short lived renaissance fashion, it is simple enough for us. The actual years are named by the reigning consul of that year, which means we got to write a list of over 1000 names when we get serious. a.u.c. year 1 is 753 b.c.
 
-*Side note:* In 297 a.d. Diocletian introduced a numbering of years that was used for some time, especially in roman egypt. It was counting the years after Diocletians inauguration with the notation 1 a.d. Later in 525 a.d. the notation of *a.d.* was overwritten with the current meaning (*anno domini*).
-
-### Months
-
-Month were structured based on a four year cycle. The winter break was filled with two new month. Every second year there was a leap month called *intercalaris mensis*.
-
-Month names and length:
+**Month:** The first month of the year is Martius. A year can either be a common year, a short leap year or a long leap year.
 
 | **Name** | **Length 1st common year** | **Length 2nd leap year** | **Length 3rd common year** | **Length 4th leap+ year** |
 |----------|-----------|----------|-----------|----------|
@@ -165,41 +47,160 @@ Month names and length:
 | Ianuarius | 29 | 29 | 29 | 29 |
 | Februarius | 28 | 23 | 28 | 23 |
 | Intercalaris mensis | - | 27 | - | 28 |
+| **Sum** | 355 | 377 | 355 | 378 |
 
-Length of a year was 355 days for the 1st year, 377 days for the 2nd year, 355 days for the third year and 378 days for the 4th year.
+**24 year cycle:** To bring the calendar year length in match with the solar year length (365,25 days) a complicated 24 year cycle was conceived.
 
-This four year cycle is four days longer than the actual cycle (mean year duration is 366,25 days). To correct for this day shift, the four year cycle was embedded in a 24 year cycle.
+| **Year** | **Type** | **Length** | **cumulative Length** |
+|----------|----------|------------|-----------------------|
+|  1 | common | 355 | 355 |
+|  2 | leap | 377 | 732 |
+|  3 | common | 355 | 1087 |
+|  4 | leap+ | 378 | 1465 |
+|  5 | common | 355 | 1820 |
+|  6 | leap | 377 | 2197 |
+|  7 | common | 355 | 2552 |
+|  8 | leap+ | 378 | 2930 |
+|  9 | common | 355 | 3285 |
+| 10 | leap | 377 | 3662 |
+| 11 | common | 355 | 4017 |
+| 12 | leap+ | 378 | 4395 |
+| 13 | common | 355 | 4750 |
+| 14 | leap | 377 | 5127 |
+| 15 | common | 355 | 4582 |
+| 16 | leap+ | 378 | 5860 |
+| 17 | common | 355 | 6215 |
+| 18 | leap | 377 | 6592 |
+| 19 | common | 355 | 6947 |
+| 20 | leap | 377 | 7324 |
+| 21 | common | 355 | 7679 |
+| 22 | leap | 377 | 8056 |
+| 23 | common | 355 | 8411 |
+| 24 | common | 355 | 8766 |
 
-| **Year** | **Type** | **Length** |
-|----------|----------|------------|
-|  1 | common | 355 |
-|  2 | leap | 377 |
-|  3 | common | 355 |
-|  4 | leap+ | 378 |
-|  5 | common | 355 |
-|  6 | leap | 377 |
-|  7 | common | 355 |
-|  8 | leap+ | 378 |
-|  9 | common | 355 |
-| 10 | leap | 377 |
-| 11 | common | 355 |
-| 12 | leap+ | 378 |
-| 13 | common | 355 |
-| 14 | leap | 377 |
-| 15 | common | 355 |
-| 16 | leap+ | 378 |
-| 17 | common | 355 |
-| 18 | leap | 377 |
-| 19 | common | 355 |
-| 20 | leap | 377 |
-| 21 | common | 355 |
-| 22 | leap | 377 |
-| 23 | common | 355 |
-| 24 | common | 355 |
+**Weeks:** We are not modelling weeks, even though they are complicated in their own crazy way - nundinal weeks are nine day weeks that are actually eight days long.
 
-The mean year duration over a 24 year cycle is 365,25 days.
+**Day of Month:** Days within a month were named after a strict naming scheme. For simplicity we omit this naming scheme right now. Implement it later when enough time is left.
 
-Month were initially used ina an adjective way - *I. Sexitilis* means something like the sixth *Kalendis* in the current year.
+## Roman republic calendar - Update
+
+> _153 b.c._
+>
+> Good news everybody. I got some news from our old customer Rome. They are doing well and our calendar implementation is used by the priesthood. They are now at a point where the calendar is regularly published before the next month starts. So planing based on dates becomes quite reasonably. However they requested a little change from us due to updates in their government practice.
+
+### Specification
+
+This little change could be easily incorporated into the existing calendar implementation if it is well done. The consular year now starts with Ianuarius, due to some political struggles that needed an earlier change of an consul to strike down a rebellion in hispania.
+
+*Note:* This is actually a dispute between historians if this change actually happened, but for our purpose we assume it did.
+
+## Julian calendar reform
+
+> _46 b.c._
+> 
+> Phu tough times for our loyal customer the roman empire - yes they are no longer a republic but an empire now.
+> The great Julius Ceasar rose to become the sole ruler of the whole roman empire and the pontifex maximus. There was a civil war and much unrest in the empire, but Julius Ceasar rose above all challenges and now resides over the biggest and most influential empire of the world.
+> And now he is reforming the heck out of the old dated system. One of his big reforms actually tackles complexity in the calendar. Which means we have to adapt our implementation.
+
+Julius Ceasar was actually hunting down an political opponent in egypt, when he learned about the egyptian calendar that was installed somewhat less successful since 238 b.c. (Decree of Canopus).
+
+### Specification
+
+**Months:** The days of the month were restructured. The leap month was removed completely and the month *quintilis* was renamed to *Iunius* after Julius Ceasar.
+
+| **Name** | **Length common year** | **Length leap year** |
+|----------|-----------|----------|
+| Ianuarius | 31 | 31 |
+| Februarius | 28 | 29 |
+| Martius | 31 | 31 |
+| Aprilis | 30 | 30 |
+| Maius | 31 | 31 |
+| Iunius | 30 | 30 |
+| Iulius | 31 | 31 |
+| Sextilis | 31 | 31 |
+| September | 30 | 30 |
+| October | 31 | 31 |
+| November | 30 | 30 |
+| December | 31 | 31 |
+| **Sum** | 365 | 366 |
+
+**4-Year cycle:** A year is now considered to be a common year with 365 days length or a leap year with 366 days length.
+
+| **Year** | **Type** | **Length** | **cumulative Length** |
+|----------|----------|------------|-----------------------|
+|  1 | common | 365 | 365 |
+|  2 | common | 365 | 730 |
+|  3 | common | 365 | 1095 |
+|  4 | leap | 366 | 1461 |
+
+**The strange year:** The year 46 b.c. was the year of confusion. It was the year to align the roman calendar with the solar calendar. For this two months were added 
+
+| **Name** | **Length** |
+|----------|-----------|
+| Ianuarius | 29 |
+| Februarius | 23 |
+| Intercalaris mensis | 28 |
+| Martius | 31 |
+| Aprilis | 29 |
+| Maius | 31 |
+| Iunius | 29 |
+| Quintilis | 31 |
+| Sextilis | 29 |
+| September | 29 |
+| October | 31 |
+| November | 29 |
+| Intercalaris Prior | 33 |
+| Intercalaris Posterior | 34 |    
+| December | 29 |
+| **Sum** | 445 |
+
+*Mote:* The actual length of the two leap month is not know, but the both together amount to 67 days. For this exercise we assume the day number in the above table.
+
+## Fixing the Julian reform
+
+> _8 b.c._
+>
+> Talking about failed administration transformations... These romans ... unbelievable ...
+>
+> They got a fine new calendar there, which is so simple and reliable, that the had to screw it up somehow.
+>
+> So what happened: Julius Ceasar eventually ceased to be the imperator (et tu brute?). And now Augustus is the current reigning imperator. And everything seems to be in order in the empire. Everything but the calendar. The clerus which is responsible for the calendar did not understand the reform correctly and did not use our state of the art tools. Rather they were calculating the length of the years by a faulty way. Instead of every fourth year every third year was a leap year - they counted a leap year already as the first year of a new four year cycle.
+>
+> Sadly this was already running for several years, so we have to adapt our implementation to follow this error and also adapt to the correction of these accumulated errors. Hopefully the clerus wills tart using our software more faithfully.
+
+### Specification
+
+**Month:** All month stay the same, but the month *sextilis* is now called *August* after imperator Augustus.
+
+**Years:**
+
+After the error was found leap years were paused until the days were aligned again.
+
+Triennial (erroneous) leap years (b.c.): 44, 41, 38, 35, 32, 29, 26, 23, 20, 17, 14, 11, 8
+
+First quadriennial (normal) leap year: 4 a.d.
+
+*Note:* there are actually 9 different historical models on how to identify the missing days and how they were fixed. In this exercise we follow the definition of Bennett from 2003.
+
+## Gregorian calendar reform
+
+> _1582 a.b._
+>
+> Great news everybody. We got a new contract for a reference implementation of a new calendar format straight from Rome.
+>
+> Now rome is no langer an empire, but it is the capitol of the holy catholic church. Pope Gregory XIII decided to bring some more structure to the existing legacy calendar scheme to adopt for new astronomical knowledge. And when they were looking for an contractor who would be able to provide an implementation of a new calendar they somehow found some old documents in which we where referenced. So they send a message to us.
+
+The reform was specified in the papal bull *Inter gravissimas*. The long hold believe of a solar year being 365,25 days was overthrown by more precise measuring device which put the length at 365.2425. This difference is not huge, but in the long run would bring a calendar into serious asynchronity.
+
+### Specification
+
+**Leap year:** A leap year is (like before) every fourth year. Except when the year is divisible by 100 and not divisible by 400.
+
+**Year naming:** Years are now specified according to the year of christ birth - Anno domini (a.d.) and before christ (b.c.).
+
+Anno domini (in short a.d.) is not to be confused with Anno Diocletian (in short a.d.), which was valid in the reign of emperor Diocletian and was indicating the year after Diocletian's rise to the throne.
+
+## Other
 
 ### Days within a month
 
