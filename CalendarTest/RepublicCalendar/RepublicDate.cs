@@ -10,6 +10,7 @@ public class RepublicDate : IDate
     }
 
     public uint DayNumber { get; }
+    public uint DayInYear => DayNumber - FirstDayNumberOfYear + 1;
 
     // delegate to year
     public uint Year => year.Year;
@@ -18,9 +19,11 @@ public class RepublicDate : IDate
     public string YearName => year.YearName;
     public uint FirstDayNumberOfYear => year.FirstDayNumberOfYear;
 
-    public uint DayInYear => throw new NotImplementedException();
 
     public uint Month => throw new NotImplementedException();
+    public uint MonthLength => throw new NotImplementedException();
+    public uint FirstDayOfMonth => throw new NotImplementedException();
+    public string MonthName => throw new NotImplementedException();
 
     public uint DayInMonth => throw new NotImplementedException();
 
@@ -28,7 +31,6 @@ public class RepublicDate : IDate
 
     public uint Weekday => throw new NotImplementedException();
 
-    public string MonthName => throw new NotImplementedException();
 
     public string DayName => throw new NotImplementedException();
 

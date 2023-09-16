@@ -83,4 +83,24 @@ public class RepublicDateTest
             .Be(378, $"because year {yearNumber} is a long leap year");
     }
 
+    [Theory]
+    [InlineData(1)]
+    [InlineData(356)]
+    [InlineData(LengthOf24YearCycle + 733)]
+    [InlineData(LengthOf24YearCycle * 2 + 1088)]
+    [InlineData(LengthOf24YearCycle * 16 + 1466)]
+    public void DayInYear_FirstDayOfYear(uint dayNumber) {
+        new RepublicDate(dayNumber).DayInYear.Should().Be(1);
+    }
+
+    [Theory]
+    [InlineData(355)]
+    [InlineData(732)]
+    [InlineData(LengthOf24YearCycle + 1087)]
+    [InlineData(LengthOf24YearCycle * 2 + 1465)]
+    [InlineData(LengthOf24YearCycle * 16 + 1820)]
+    public void DayInYear_LastDayOfYear(uint dayNumber) {
+        new RepublicDate(dayNumber).DayInYear.Should()
+            .Be(new RepublicYear(dayNumber).YearLength);
+    }
 }
