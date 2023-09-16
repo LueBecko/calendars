@@ -35,7 +35,7 @@ public class RepublicDate : IDate
         <= 8056 => 22,
         <= 8411 => 23,
         <= 8766 => 24,
-        _ => 0
+        _ => 24 * ((DayNumber - 1) / 8766) + new RepublicDate(1 + ((DayNumber - 1)) % 8766).Year
     };
 
     public uint DayInYear => throw new NotImplementedException();

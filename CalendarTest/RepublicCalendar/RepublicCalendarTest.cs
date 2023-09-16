@@ -2,6 +2,8 @@ namespace CalendarTest.RepublicCalendar;
 
 public class RepublicCalendarTest
 {
+    private const int LengthOf24YearCycle = 8766;
+
     [Theory]
     [InlineData(1,1)]
     [InlineData(356,2)]
@@ -59,6 +61,20 @@ public class RepublicCalendarTest
     [InlineData(8411,23)]
     [InlineData(8766,24)]
     public void Year_24YearCycle_LastDayOfYear(uint dayNumber, uint expectedYear)
+    {
+        new RepublicDate(dayNumber).Year.Should().Be(expectedYear);
+    }
+
+    [Theory]
+    [InlineData(LengthOf24YearCycle + 1,25)]
+    [InlineData(LengthOf24YearCycle + 355 + 1,26)]
+    [InlineData(LengthOf24YearCycle + 723,26)]
+    [InlineData(LengthOf24YearCycle + 733,27)]
+    [InlineData(LengthOf24YearCycle * 2,48)]
+    [InlineData(LengthOf24YearCycle * 2 + 1,49)]
+    [InlineData(LengthOf24YearCycle * 3,72)]
+    [InlineData(LengthOf24YearCycle * 3 + 1,73)]
+    public void Year_Across24YearCycles(uint dayNumber, uint expectedYear)
     {
         new RepublicDate(dayNumber).Year.Should().Be(expectedYear);
     }
