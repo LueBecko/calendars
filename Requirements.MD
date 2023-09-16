@@ -67,7 +67,7 @@ A calendar is a total ordering of days. Each day has a unique name (called a dat
 | 12 | leap+ | 378 | 4395 |
 | 13 | common | 355 | 4750 |
 | 14 | leap | 377 | 5127 |
-| 15 | common | 355 | 4582 |
+| 15 | common | 355 | 5482 |
 | 16 | leap+ | 378 | 5860 |
 | 17 | common | 355 | 6215 |
 | 18 | leap | 377 | 6592 |
