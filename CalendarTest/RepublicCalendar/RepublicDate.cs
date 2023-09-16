@@ -11,10 +11,12 @@ public class RepublicDate : IDate
 
     public uint DayNumber { get; }
 
+    // delegate to year
     public uint Year => year.Year;
     public string YearType => year.YearType;
     public uint YearLength => year.YearLength;
     public string YearName => year.YearName;
+    public uint FirstDayNumberOfYear => year.FirstDayNumberOfYear;
 
     public uint DayInYear => throw new NotImplementedException();
 

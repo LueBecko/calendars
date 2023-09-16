@@ -8,7 +8,39 @@ public class RepublicYear : IYear
     {
         Year = ComputeYear(dayNumber);
         (YearType, YearLength) = ComputeYearType(dayNumber);
+        FirstDayNumberOfYear = ComputeFirstDayOfTheYear(dayNumber);
     }
+
+    private uint ComputeFirstDayOfTheYear(uint dayNumber) => LengthOf24YearCycle * CycleNumber(dayNumber) + FirstDayOfYearIn24YearCycle(dayNumber);
+
+    private uint FirstDayOfYearIn24YearCycle(uint dayNumber) => (1 + ((dayNumber - 1) % LengthOf24YearCycle)) switch
+    {
+        <= 355 => 1,
+        <= 732 => 356,
+        <= 1087 => 733,
+        <= 1465 => 1088,
+        <= 1820 => 1466,
+        <= 2197 => 1821,
+        <= 2552 => 2198,
+        <= 2930 => 2553,
+        <= 3285 => 2931,
+        <= 3662 => 3286,
+        <= 4017 => 3663,
+        <= 4395 => 4018,
+        <= 4750 => 4396,
+        <= 5127 => 4751,
+        <= 5482 => 5128,
+        <= 5860 => 5483,
+        <= 6215 => 5861,
+        <= 6592 => 6216,
+        <= 6947 => 6593,
+        <= 7324 => 6948,
+        <= 7679 => 7325,
+        <= 8056 => 7680,
+        <= 8411 => 8057,
+        <= 8766 => 8412,
+        _ => 0
+    };
 
     private (string, uint) ComputeYearType(uint dayNumber) => YearIn24YearCycle(dayNumber) switch
     {
@@ -54,4 +86,5 @@ public class RepublicYear : IYear
     public uint YearLength { get; }
     public string YearType { get; }
     public string YearName => throw new NotImplementedException();
+    public uint FirstDayNumberOfYear { get; }
 }
