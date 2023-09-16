@@ -18,11 +18,6 @@ public interface ICalendarDay
     bool Equals(object? obj) => obj is ICalendarDay dies && DayNumber == dies.DayNumber;
     int GetHashCode() => HashCode.Combine(DayNumber);
 
-    ICalendarDay AddDays(uint days);
-    ICalendarDay SubtractDays(uint days);
-    ICalendarDay Previous() => SubtractDays(1);
-    ICalendarDay Next() => AddDays(1);
-
     static bool operator <(ICalendarDay left, ICalendarDay right) => left.DayNumber < right.DayNumber;
     static bool operator >(ICalendarDay left, ICalendarDay right) => left.DayNumber > right.DayNumber;
 }
