@@ -1,14 +1,12 @@
 namespace CalendarTest;
 
-public interface IDate : IYear
+public interface IDate : IYear, IMonth
 {
     uint DayNumber { get; }
     uint DayInYear { get; }
-    uint Month { get; }
     uint DayInMonth { get; }
     uint WeekInYear { get; }
     uint Weekday { get; }
-    string MonthName { get; }
     string DayName { get; }
     string WeekdayName { get; }
 
