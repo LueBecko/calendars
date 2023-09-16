@@ -313,7 +313,6 @@ public class RepublicYearTest
             .Be(expectedFirstDayOfYear, $"because the first day of year {yearNumber} is the day {expectedFirstDayOfYear}");
     }
 
-
     [Theory]
     [InlineData(LengthOf24YearCycle + 1, 1, LengthOf24YearCycle + 1)]
     [InlineData(LengthOf24YearCycle + 355, 1, LengthOf24YearCycle + 1)]
@@ -324,5 +323,117 @@ public class RepublicYearTest
     public void FirstDayNumberOfYear_Across24YearCycles(uint dayNumber, uint yearNumber, uint expectedFirstDayOfYear) {
         new RepublicYear(dayNumber).FirstDayNumberOfYear.Should()
             .Be(expectedFirstDayOfYear, $"because the first day of year {yearNumber} is the day {expectedFirstDayOfYear}");
+    }
+
+    [Fact]
+    public void MonthsOfYear_OfCommonYear() {
+        var year = new RepublicYear(1);
+
+        year.MonthsOfYear.Should().HaveCount(12);
+        year.MonthsOfYear.Select(month => month.MonthName).Should()
+            .ContainInOrder(
+                "Martius",
+                "Aprilis",
+                "Maius",
+                "Iunius",
+                "Quintilis",
+                "Sextilis",
+                "September",
+                "October",
+                "November",
+                "December",
+                "Ianuarius",
+                "Februarius");
+        year.MonthsOfYear.Select(month => month.MonthLength).Should()
+            .ContainInOrder(
+                31,
+                29,
+                31,
+                29,
+                31,
+                29,
+                29,
+                31,
+                29,
+                29,
+                29,
+                28);
+        year.MonthsOfYear.Sum(month => month.MonthLength).Should().Be(year.YearLength);
+    }
+
+    [Fact]
+    public void MonthsOfYear_OfLeapYear() {
+        var year = new RepublicYear(356);
+
+        year.MonthsOfYear.Should().HaveCount(13);
+        year.MonthsOfYear.Select(month => month.MonthName).Should()
+            .ContainInOrder(
+                "Martius",
+                "Aprilis",
+                "Maius",
+                "Iunius",
+                "Quintilis",
+                "Sextilis",
+                "September",
+                "October",
+                "November",
+                "December",
+                "Ianuarius",
+                "Februarius",
+                "Intercalaris mensis");
+        year.MonthsOfYear.Select(month => month.MonthLength).Should()
+            .ContainInOrder(
+                31,
+                29,
+                31,
+                29,
+                31,
+                29,
+                29,
+                31,
+                29,
+                29,
+                29,
+                23,
+                27);
+        year.MonthsOfYear.Sum(month => month.MonthLength).Should().Be(year.YearLength);
+    }
+
+    [Fact]
+    public void MonthsOfYear_OfLongLeapYear() {
+        var year = new RepublicYear(1088);
+
+        year.MonthsOfYear.Should().HaveCount(13);
+        year.MonthsOfYear.Select(month => month.MonthName).Should()
+            .ContainInOrder(
+                "Martius",
+                "Aprilis",
+                "Maius",
+                "Iunius",
+                "Quintilis",
+                "Sextilis",
+                "September",
+                "October",
+                "November",
+                "December",
+                "Ianuarius",
+                "Februarius",
+                "Intercalaris mensis");
+        year.MonthsOfYear.Select(month => month.MonthLength).Should()
+            .ContainInOrder(
+                31,
+                29,
+                31,
+                29,
+                31,
+                29,
+                29,
+                31,
+                29,
+                29,
+                29,
+                23,
+                28);
+        year.MonthsOfYear.Sum(month => month.MonthLength).Should().Be(year.YearLength);
     }
 }

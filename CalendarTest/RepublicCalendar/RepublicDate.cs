@@ -3,14 +3,18 @@ namespace CalendarTest.RepublicCalendar;
 public class RepublicDate : IDate
 {
     private readonly RepublicYear year;
+    private readonly RepublicMonth month;
+
     public RepublicDate(uint dayNumber)
     {
         DayNumber = dayNumber;
         year = new RepublicYear(dayNumber);
+        month = year.GetMonth(DayInYear);
     }
 
     public uint DayNumber { get; }
     public uint DayInYear => DayNumber - FirstDayNumberOfYear + 1;
+    public uint DayInMonth => DayInYear - FirstDayNumberOfMonth + 1;
 
     // delegate to year
     public uint Year => year.Year;
@@ -19,13 +23,12 @@ public class RepublicDate : IDate
     public string YearName => year.YearName;
     public uint FirstDayNumberOfYear => year.FirstDayNumberOfYear;
 
+    // delegate to month
+    public uint Month => month.Month;
+    public uint MonthLength => month.MonthLength;
+    public uint FirstDayNumberOfMonth => month.FirstDayNumberOfMonth;
+    public string MonthName => month.MonthName;
 
-    public uint Month => throw new NotImplementedException();
-    public uint MonthLength => throw new NotImplementedException();
-    public uint FirstDayOfMonth => throw new NotImplementedException();
-    public string MonthName => throw new NotImplementedException();
-
-    public uint DayInMonth => throw new NotImplementedException();
 
     public uint WeekInYear => throw new NotImplementedException();
 

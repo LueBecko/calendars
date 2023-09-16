@@ -11,14 +11,61 @@ public class RepublicYear : IYear
 
         Year = 24 * cycleNumber + year.Year;
         FirstDayNumberOfYear = LengthOf24YearCycle * cycleNumber + year.FirstDayInYear;
-        (YearType, YearLength) = ComputeYearType(year.Year);
+        (YearType, YearLength, MonthsOfYear) = ComputeYearType(year.Year);
     }
 
-    private (string, uint) ComputeYearType(uint year) => year switch
+    private static IReadOnlyList<RepublicMonth> CommonYearMonths = new List<RepublicMonth>() {
+            RepublicMonth.Martius,
+            RepublicMonth.Aprilis,
+            RepublicMonth.Maius,
+            RepublicMonth.Iunius,
+            RepublicMonth.Quintilis,
+            RepublicMonth.Sextilis,
+            RepublicMonth.September,
+            RepublicMonth.October,
+            RepublicMonth.November,
+            RepublicMonth.December,
+            RepublicMonth.Ianuarius,
+            RepublicMonth.Februarius,
+            };
+
+    private static IReadOnlyList<RepublicMonth> LeapYearMonths = new List<RepublicMonth>() {
+            RepublicMonth.Martius,
+            RepublicMonth.Aprilis,
+            RepublicMonth.Maius,
+            RepublicMonth.Iunius,
+            RepublicMonth.Quintilis,
+            RepublicMonth.Sextilis,
+            RepublicMonth.September,
+            RepublicMonth.October,
+            RepublicMonth.November,
+            RepublicMonth.December,
+            RepublicMonth.Ianuarius,
+            RepublicMonth.FebruariusIntercalaris,
+            RepublicMonth.IntercalarisMensis,
+            };
+
+    private static IReadOnlyList<RepublicMonth> LongLeapYearMonths = new List<RepublicMonth>() {
+            RepublicMonth.Martius,
+            RepublicMonth.Aprilis,
+            RepublicMonth.Maius,
+            RepublicMonth.Iunius,
+            RepublicMonth.Quintilis,
+            RepublicMonth.Sextilis,
+            RepublicMonth.September,
+            RepublicMonth.October,
+            RepublicMonth.November,
+            RepublicMonth.December,
+            RepublicMonth.Ianuarius,
+            RepublicMonth.FebruariusIntercalaris,
+            RepublicMonth.IntercalarisMensisLong,
+            };
+
+    private (string, uint, IReadOnlyList<RepublicMonth>) ComputeYearType(uint year) => year switch
     {
-        2 or 6 or 10 or 14 or 18 or 20 or 22 => ("annus intercalarius", 377),
-        4 or 8 or 12 or 16 => ("annus intercalarius longus", 378),
-        _ => ("annus", 355)
+        2 or 6 or 10 or 14 or 18 or 20 or 22 => ("annus intercalarius", 377, LeapYearMonths),
+        4 or 8 or 12 or 16 => ("annus intercalarius longus", 378, LongLeapYearMonths),
+        _ => ("annus", 355, CommonYearMonths)
     };
 
     private static uint CycleNumber(uint dayNumber) => (dayNumber - 1) / LengthOf24YearCycle;
@@ -54,7 +101,13 @@ public class RepublicYear : IYear
 
     public uint Year { get; }
     public uint YearLength { get; }
+    public uint FirstDayNumberOfYear { get; }
     public string YearType { get; }
     public string YearName => throw new NotImplementedException();
-    public uint FirstDayNumberOfYear { get; }
+
+    public IReadOnlyList<IMonth> MonthsOfYear { get; }
+
+    public RepublicMonth GetMonth(uint dayInYear) {
+        return null;
+    }
 }
