@@ -4,6 +4,7 @@ public interface IDate
 {
     uint DayNumber { get; }
     uint Year { get; }
+    string YearType { get; }
     uint DayInYear { get; }
     uint Month { get; }
     uint DayInMonth { get; }

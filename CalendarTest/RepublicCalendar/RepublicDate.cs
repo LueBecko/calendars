@@ -9,7 +9,9 @@ public class RepublicDate : IDate
 
     public uint DayNumber { get; }
 
-    public uint Year => DayNumber switch
+    public uint Year => (24 * ((DayNumber - 1) / 8766)) + YearIn24YearCycle;
+
+    private uint YearIn24YearCycle => (1 + ((DayNumber - 1)) % 8766) switch
     {
         <= 355 => 1,
         <= 732 => 2,
@@ -35,7 +37,14 @@ public class RepublicDate : IDate
         <= 8056 => 22,
         <= 8411 => 23,
         <= 8766 => 24,
-        _ => 24 * ((DayNumber - 1) / 8766) + new RepublicDate(1 + ((DayNumber - 1)) % 8766).Year
+        _ => 0
+    };
+
+    public string YearType => YearIn24YearCycle switch
+    {
+        2 or 6 or 10 or 14 or 18 or 20 or 22 => "annus intercalarius",
+        4 or 8 or 12 or 16 => "annus intercalarius longus",
+        _ => "annus"
     };
 
     public uint DayInYear => throw new NotImplementedException();

@@ -1,6 +1,6 @@
 namespace CalendarTest.RepublicCalendar;
 
-public class RepublicCalendarTest
+public class RepublicDateTest
 {
     private const int LengthOf24YearCycle = 8766;
 
@@ -77,6 +77,82 @@ public class RepublicCalendarTest
     public void Year_Across24YearCycles(uint dayNumber, uint expectedYear)
     {
         new RepublicDate(dayNumber).Year.Should().Be(expectedYear);
+    }
+
+    [Theory]
+    [InlineData(1,1)]
+    [InlineData(733,3)]
+    [InlineData(1466,5)]
+    [InlineData(2198,7)]
+    [InlineData(2931,9)]
+    [InlineData(3663,11)]
+    [InlineData(4396,13)]
+    [InlineData(5128,15)]
+    [InlineData(5861,17)]
+    [InlineData(6593,19)]
+    [InlineData(7325,21)]
+    [InlineData(8057,23)]
+    [InlineData(8412,24)]
+    [InlineData(LengthOf24YearCycle + 1,25)]
+    [InlineData(LengthOf24YearCycle + 733,27)]
+    [InlineData(LengthOf24YearCycle + 1466,29)]
+    [InlineData(LengthOf24YearCycle * 2 + 1, 24 * 2 + 1)]
+    [InlineData(LengthOf24YearCycle * 2 + 733, 24 * 2 + 3)]
+    [InlineData(LengthOf24YearCycle * 3 + 1466, 24 * 3 + 5)]
+    public void YearType_CommonYears(uint firstDayNumber, uint yearNumber)
+    {
+        RepublicDate date = new(firstDayNumber);
+        // note: this is just there to make the test more comprehensive
+        date.Year.Should().Be(yearNumber);
+        new RepublicDate(firstDayNumber + 354).Year.Should().Be(yearNumber);
+        
+        date.YearType.Should().Be("annus");
+    }
+
+    [Theory]
+    [InlineData(356,2)]
+    [InlineData(1821,6)]
+    [InlineData(3286,10)]
+    [InlineData(4751,14)]
+    [InlineData(6216,18)]
+    [InlineData(6948,20)]
+    [InlineData(7680,22)]
+    [InlineData(LengthOf24YearCycle + 356, 24 + 2)]
+    [InlineData(LengthOf24YearCycle + 1821, 24 + 6)]
+    [InlineData(LengthOf24YearCycle + 3286, 24 + 10)]
+    [InlineData(LengthOf24YearCycle * 2 + 356, 24 * 2 + 2)]
+    [InlineData(LengthOf24YearCycle * 2 + 1821, 24 * 2 + 6)]
+    [InlineData(LengthOf24YearCycle * 3 + 3286, 24 * 3 + 10)]
+    public void YearType_LeapYears(uint firstDayNumber, uint yearNumber)
+    {
+        RepublicDate date = new(firstDayNumber);
+        // note: this is just there to make the test more comprehensive
+        date.Year.Should().Be(yearNumber);
+        new RepublicDate(firstDayNumber + 376).Year.Should().Be(yearNumber);
+        
+        date.YearType.Should().Be("annus intercalarius");
+    }
+
+
+    [Theory]
+    [InlineData(1088,4)]
+    [InlineData(2553,8)]
+    [InlineData(4018,12)]
+    [InlineData(5483,16)]
+    [InlineData(LengthOf24YearCycle + 1088, 24 + 4)]
+    [InlineData(LengthOf24YearCycle + 2553, 24 + 8)]
+    [InlineData(LengthOf24YearCycle + 4018, 24 + 12)]
+    [InlineData(LengthOf24YearCycle * 2 + 1088, 24 * 2 + 4)]
+    [InlineData(LengthOf24YearCycle * 2 + 2553, 24 * 2 + 8)]
+    [InlineData(LengthOf24YearCycle * 3 + 4018, 24 * 3 + 12)]
+    public void YearType_LongLeapYears(uint firstDayNumber, uint yearNumber)
+    {
+        RepublicDate date = new(firstDayNumber);
+        // note: this is just there to make the test more comprehensive
+        date.Year.Should().Be(yearNumber);
+        new RepublicDate(firstDayNumber + 377).Year.Should().Be(yearNumber);
+        
+        date.YearType.Should().Be("annus intercalarius longus");
     }
 
 }
